@@ -29,13 +29,18 @@ function formatTime(seconds) {
   async function generateQR() {
     const tab = await getCurrentTab();
     let url = tab.url;
+    const title = tab.title;
+
+    // Mostrar título
+    document.querySelector(".label-title").textContent = title;
   
     // Si es YouTube, añadir timestamp
     if (url.includes("youtube.com/watch")) {
       const currentTime = await getYouTubeTime();
       if (currentTime !== null) {
         const formatted = formatTime(currentTime);
-        url += `&t=${formatted}`;
+        const separator = url.includes("?") ? "&" : "?";
+        url += `${separator}t=${formatted}`;
       }
     }
   
