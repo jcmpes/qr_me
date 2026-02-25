@@ -1,0 +1,15 @@
+{
+    "manifest_version": 3,
+    "name": "QR Me",
+    "version": "1.0",
+    "description": "Genera un QR con la URL actual. En YouTube incluye el timestamp.",
+    "permissions": ["activeTab", "scripting"],
+    "action": {
+      "default_popup": "popup.html",
+      "default_title": "Generar QR"
+    },
+    "icons": {
+        "32": "icons/QR_32.png",
+        "64": "icons/QR_64.png"
+        }
+  }
